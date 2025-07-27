@@ -1,0 +1,11 @@
+version = 0.1
+
+[default.deploy.parameters]
+stack_name = "cognito-serendipity"
+resolve_s3 = true
+s3_prefix = "cognito-serendipity"
+region = "ca-central-1"
+confirm_changeset = true
+capabilities = "CAPABILITY_IAM"
+parameter_overrides = "Env=\"dev\" S3BucketName=\"serendipity-static-site\" CognitoUserPoolName=\"serendipity-userpool\" CognitoWebClientName=\"serendipity-webclient\""
+image_repositories = []
