@@ -26,8 +26,16 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 
-## Deploy on AWS 
+## Create Resources on AWS 
 
 make sure to have you AWS account credentials configured on your terminal
 
 Run `sam deploy --template-file sam-template.yaml --guided` 
+
+## Deploy the app on AWS S3 
+
+build the app  using `ng build` which will create the folder dist/serendipity-fe
+
+run the command `aws s3 sync dist/serendipity-fe s3://dev-serendipity-static-site` which will deploy the static file on AWS S3 bucket
+
+

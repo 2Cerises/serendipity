@@ -1,2 +1,13 @@
 <b>Hello World</b>
 <p>Welcome to the Serendipity application!</p>
+
+<amplify-authenticator initialState="signIn" [formFields]="formFields">
+  <ng-template
+    amplifySlot="authenticated"
+    let-user="user"
+    let-signOut="signOut"
+  >
+    <h1>Welcome {{ user.username }}!</h1>
+    <button (click)="signOut()">Sign Out</button>
+  </ng-template>
+</amplify-authenticator>
